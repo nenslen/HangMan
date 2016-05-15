@@ -94,7 +94,6 @@ int main()
     printf("\nGame stats:\n");
     printf("    Word: %s\n",word);
     printf("    Total guesses: %d\n",totalGuesses);
-    printf("    Time elapsed: %lf\n",4.0);
 
     printf("Press enter to continue...\n");
     fflush(stdin);
