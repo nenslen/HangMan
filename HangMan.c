@@ -7,6 +7,8 @@
     #include <unistd.h>
 #endif
 
+
+
 /** Prototypes **/
 void getRandomWord(int,char[]);     // Gets a random word for the user to guess
 void strToLower(char[]);            // Converts a string to all lowercase characters
@@ -19,6 +21,8 @@ char getGuess(int[]);               // Gets guess from the user
 void saveGuess(char,int[]);         // Saves the guess the user enters in the guessed letters array
 int checkGuess(char,char[],char[]); // Checks if guessed letter is part of word to be guessed
 FILE* openFile(char*, char*);       // Opens a file
+
+
 
 int main()
 {
@@ -99,6 +103,8 @@ int main()
     return 0;
 }
 
+
+
 /** Draws hangman **/
 void drawHangMan(int guessesLeft) {
     switch(guessesLeft)
@@ -177,6 +183,8 @@ void drawHangMan(int guessesLeft) {
     return;
 }
 
+
+
 /** Checks to see if user has guess the whole word **/
 int winCheck(char word[],char userWord[]) {
     if(strcmp(word,userWord) == 0)
@@ -188,6 +196,8 @@ int winCheck(char word[],char userWord[]) {
         return 1;
     }
 }
+
+
 
 /** Checks if guessed letter is part of word to be guessed, and fills in the blanks of the user string **/
 int checkGuess(char guess,char word[],char userWord[]) {
@@ -207,6 +217,8 @@ int checkGuess(char guess,char word[],char userWord[]) {
     return returnVal; // User did not guess correct letter
 }
 
+
+
 /** Stores valid guessed letter in the array **/
 void saveGuess(char guess,int guessedLetters[]) {
     // Finds out where to store it based on which letter it is
@@ -214,6 +226,8 @@ void saveGuess(char guess,int guessedLetters[]) {
 
     return;
 }
+
+
 
 /** Gets a character as a guess, makes sure it was not guessed first **/
 char getGuess(int guessedLetters[]) {
@@ -243,6 +257,8 @@ char getGuess(int guessedLetters[]) {
     return c;
 }
 
+
+
 /** Makes sure a guess is valid (chars only) **/
 int validateLetter(char c,int guessedLetters[]) {
     // Makes sure c is a char, not a number
@@ -263,6 +279,8 @@ int validateLetter(char c,int guessedLetters[]) {
 
     return 2;
 }
+
+
 
 /** Gets a random word from textfile **/
 void getRandomWord(int index,char word[]) {
@@ -310,6 +328,8 @@ void getRandomWord(int index,char word[]) {
     return;
 }
 
+
+
 /** Fills user's guess string with underscores **/
 void fillUserString(char userWord[],char word[]) {
     int i = 0;
@@ -321,6 +341,8 @@ void fillUserString(char userWord[],char word[]) {
 
     return;
 }
+
+
 
 /** Display's user's string, with spaces between chars **/
 void displayUserString(char userWord[]) {
@@ -342,6 +364,8 @@ void displayUserString(char userWord[]) {
     }
 }
 
+
+
 /** Displays's the user's guessed letters **/
 void displayGuessedLetters(int guessedLetters[]) {
     int i = 0;
@@ -359,6 +383,8 @@ void displayGuessedLetters(int guessedLetters[]) {
 
     return;
 }
+
+
 
 /** Opens file or creates it if it doesn't exist **/
 FILE* openFile(char* Name, char* Mode) {
@@ -394,6 +420,8 @@ FILE* openFile(char* Name, char* Mode) {
 
     return fp;
 }
+
+
 
 /** Converts a string to lowercase **/
 void strToLower(char str[]) {
